@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+}
+
+#container{ /* 아이디 선택자 */
+    width: 400;
+    height: 500;
+    padding: 100px 50px;
+    border: 1px solid black;
+    margin: 10px;
+    background: url('/Dev/Week1/HTML/image/pngtree-retro-leaf-notice-poster-image_169416.jpg') left top; /*위에서 왼쪽에서부터 이미지 출력*/
+    background-size: auto; /*배경이미지 크기*/
+}

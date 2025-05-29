@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, td {
+            border: 1px solid grey;
+
+        }
+        tr, td {
+            padding: 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        상품구성
+    </h2>
+    <table>
+        <capion>용도별상품구성</capion>
+        <colgroup >
+            <col style="background-color: blanchedalmond;">
+            <col>
+            <col span="2" style="width: 100px;">
+        </colgroup>
+        <!--첫번쨰 col 색지정-->
+        <thead>
+            <tr>
+                <th>brand</th>
+                <th>number</th>
+                <th>fruit</th>
+                <th>condition</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+            <td rowspan="2" style="width: 30px;"> <!-- 2개의 행 합치기 -->
+                <img src="/image/Logo_Del_Monte.svg.png" width="100%">
+                delmont
+            </td>
+            <td style="width: 30px;">
+                <video src="/video/6248207-uhd_2160_3840_24fps.mp4" controls width="45px" autoplay loop></video>
+                #125
+            </td>
+            <td>
+                <audio src="/sound/typical-trap-loop-140bpm-129880.mp3" controls></audio>
+                apple
+            </td>
+            <td>
+                great
+            </td>
+        </tr>
+         <tr>
+            <td>
+                #126
+            </td>
+            <td>
+                grape
+            </td>
+            <td>
+                great
+            </td>
+        </tr>
+         <tr>
+            <td rowspan="2" style="width: 30px;">
+                <img src="/image/berry burst.png" width="100%">
+                berryBurst
+            </td>
+            <td>
+                #127
+            </td>
+            <td>
+                kiwi
+            </td>
+            <td>
+                great
+            </td>
+        </tr>
+         <tr>
+            <td>
+                #127
+            </td>
+            <td>
+                kiwi
+            </td>
+            <td>
+                great
+            </td>
+        </tr>
+        </tbody>
+        
+        
+    </table>
+</body>
+</html>

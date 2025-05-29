@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            소리조절
+        </legend>
+        <div>
+            <input type="range" min="0" max="100" step="10" value="10" oninput="indicator(this.value)" onclick="console.log('현재 날짜: ', indicator(this.value))">
+            <span id="selected-value">10</span>
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend>
+            현재 날짜
+        </legend>
+        <div>
+            <input type="date" min="2025-" max="100" step="" value="10" onclick="console.log('현재 날짜: indicator(this.value)')">
+            <span id="selected-value">10</span>
+        </div>
+    </fieldset>
+    
+    
+    
+    <!--oninput이 live value를 가져옴//event성  document.getElementById('selected-value')까지 <p id="selected-value">를 가르킴 거기 p안에 innerHTML 객체가 value로 바뀐다-->
+    <script>
+        function indicator(value){
+          document.getElementById("selected-value").innerHTML = value;
+          return value
+        }
+    </script>
+</body>
+
+
+</html>

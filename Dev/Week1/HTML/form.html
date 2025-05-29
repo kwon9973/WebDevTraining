@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="" method="" > <!--속성만 서버get&post는 나중에-->
+        <fieldset>
+            <legend>
+                그룹이름
+            </legend>
+        </fieldset>
+        <label>
+            아이디(8자이상) <input type="text" placeholder="ID">
+        </label>
+    </form>
+    <br>
+    <div id="container">
+        <h1 style="font-size: 23px;">
+            회원가입
+        </h1>
+        <form action=""> 
+            <fieldset>
+                <legend>
+                  사용자 정보 
+                </legend>
+                  <ul>
+                        <li>
+                            <label for="whatever">
+                                id: <input type="text" id="whatevers">
+                            </label>
+                        </li>
+                          <li>
+                            <label for="whatever">
+                                password: <input type="text" id="whatevers">
+                            </label>
+                        </li>
+                    </ul>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    수신여부
+                </legend>
+                <input type="radio" name="mailing" id="mailing_y"> <!--서버에 응답 처리해야한다-->
+                <label for="mailing_y">메일 수신</label>
+                <br>
+                 <input type="radio" name="mailing" id="mailing_n"> <!--서버에 응답 처리해야한다-->
+                <label for="mailing_n">메일 수신안함</label>
+                <!--라디오는 하나만 응답가능 id가 같을 경우-->
+            </fieldset>
+            <div>
+                <input type="submit" value="가입하기">
+                <input type="submit" value="취소"> <!--응답을 맨위인 <form action="??"> 으로보낸다-->
+            </div>
+        </form>
+    </div>
+</body>
+</html>

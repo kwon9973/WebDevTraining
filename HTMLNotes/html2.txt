@@ -1,0 +1,36 @@
+1. 하이퍼링크 삽입하기
+    1)링크를 삽입하는 <a>
+        -텍스트 링크
+        -이미지 링크
+    2)링크를 새탭에서 열어주는 target 속성
+
+2. 입력양식 작성
+    1)폼을 만드는 <form> 태그 
+    2) 폼요소를 그룹으로 묶는 <fieldset>, <legend> 태그
+        -하나의 폼 안에서 여러 구역을 나누어 표시할떄 <fieldset>태그사용함
+        -<legend> 태그는 <fieldset> 태그로 묶은 그룹에 제목을 붙일수 있음
+    3) 폼요소에 레이블을 붙이는 <label> 태그
+        -입력란 가까이에 표시하는 텍스트임
+        -ex)
+        <label for="">
+            <input id = "">
+            태그의 for 속성과 폼요소의 id 속성을 이용해서 서로 연결함 
+
+    4) 다양한 곳에서 사용하는 웹폼의 <input> 태그
+        -<input> 태그의 type 속성 살피기
+            -text
+            -email..... 
+            -checkbox 등등    
+    5) <form [속성 = "속성값"] >여러요소가 이안에 들어감</form>
+        -<form> 태그의 속성
+            -method : get, post //서버 response & request 
+            -name
+            -action : <form> 태그 안의 내용을 처리해줄 서버 프로그램을 지정함
+    6) 라디오버튼 여러버튼중 하나만 선택하도록 id가 같으면 
+    7) 숫자 입력피드를 나타내는 type="number", type ="range"  문자입력 거부
+    8) 파일 첨보할떄 쓰는 type
+        -type="file"
+    9) 
+        -type="hidden"
+
+
