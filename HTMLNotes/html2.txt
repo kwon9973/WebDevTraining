@@ -30,7 +30,9 @@
     7) 숫자 입력피드를 나타내는 type="number", type ="range"  문자입력 거부
     8) 파일 첨보할떄 쓰는 type
         -type="file"
-    9) 
+    9) 히든필드를 만들떄 사용하는 타입
         -type="hidden"
+
+3. input태그
 
 

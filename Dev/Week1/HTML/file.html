@@ -4,12 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../HTML/CSS/file.css">
 </head>
 <body>
     <form action="#" method="post">
-        <input type="file">
+       <fieldset>
+        <legend>
+            배송정보
+        </legend>
+            <ul id="shipping">
+                    <li>
+                        <label for="prod">주문상품</label>
+                        <input type="text" id="prod" value="야외용 3kg" readonly>
+                    </li>
+                    <li>
+                        <label for="user-name">이름</label>
+                        <input type="text" id="user-name" autofocus required>
+                    </li>
+                    <li>
+                        <label for="addr">배송주소</label>
+                        <input type="text" id="addr" required placeholder="예)서울시 서대문구 홍은동">
+                    </li>
+                    <li>
+                        <label for="mail">이메일</label>
+                        <input type="email" id="mail">
+                    </li>
+                    <li>
+                        <label for="phone">연락처</label>
+                        <input type="tel" id="phone" placeholder="숫자만입력" required>
+                    </li>
 
-        <input type="hidden" name="URL" value="직접로그인">
+                    <li>
+                        <label>
+                            주문경로
+                        </label>
+                        <select id="path">
+                            <option value="sns">
+                                SNS
+                            </option>
+                            <option value="ai">
+                                AI
+                            </option>
+                            <option value="search">
+                                Search
+                            </option>
+                            <option value="offline">
+                                Offline
+                            </option>
+                        </select>
+                    </li>
+
+                    <li>
+                        <label for="textarea">
+                            요청사항들
+                        </label>
+                        <textarea id="textarea" cols="40" rows="20">
+                            
+                        </textarea>
+                    </li>
+                </ul>
+       </fieldset>
+       <div>
+        <input type="submit" value="주문하기">
+        <input type="reset" value="취소하기">
+       </div>
     </form>
 </body>
 </html>
