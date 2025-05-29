@@ -1,0 +1,33 @@
+input[type="submit"], input[type="reset"]{
+    margin-top: 8px;
+}
+
+input[type="radio"]{
+    margin-bottom: 10px;
+}
+
+input[type="text"]{
+    margin-bottom: 6px;
+    float: right;
+    align-items:end;
+}
+
+body{
+    width: 600px;
+    height: 620px;
+    border-style: solid;
+    border-color: black;
+
+}
+
+
+div{
+    padding-left: 30px;
+}
+
+a {
+    display: block; 
+    font-weight: bold; 
+    padding-top: 21px; 
+    padding-bottom: 22px;
+}
