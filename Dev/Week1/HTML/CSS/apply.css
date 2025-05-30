@@ -9,7 +9,6 @@ input[type="radio"]{
 input[type="text"]{
     margin-bottom: 6px;
     float: right;
-    align-items:end;
 }
 
 body{
