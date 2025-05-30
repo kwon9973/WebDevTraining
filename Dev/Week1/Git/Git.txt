@@ -1,12 +1,1 @@
-커밋해시 commmit hash & Git Hash 
-    -커밋을 구별하는 ID
-
-변경사항체크
-    -git diff
-
-방금 커밋한 메시지 공방
-    git commit --amend
-
-작업 되돌리기
-    작업트리에서 수정한 파일 되돌리기
-    -   -git restore
+hello
