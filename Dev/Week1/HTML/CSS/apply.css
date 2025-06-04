@@ -6,10 +6,6 @@ input[type="radio"]{
     margin-bottom: 10px;
 }
 
-input[type="text"]{
-    margin-bottom: 6px;
-    float: right;
-}
 
 body{
     width: 600px;
@@ -30,3 +26,4 @@ a {
     padding-top: 21px; 
     padding-bottom: 22px;
 }
+

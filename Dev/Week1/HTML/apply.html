@@ -23,7 +23,7 @@
                 개인정보
             </a>
             <div style="width: 250px; height: 50px;">
-                <label for="name" id="nameID">
+                <label for="name" id="nameID"> <!--display: inline block // inline은 글자크기만큼 박스를 만드는데 inline-block은 내가 박스크기를 변화할수있다-->
                     이름
                 </label>
                 <input type="text" placeholder="공백없이 입력하세요" id="name">
@@ -38,17 +38,17 @@
                 지원 분야
             </a>
             <div>
-                <input type="radio" > <label>자바 개발자</label>
+                <input type="radio" name="field" value="java" required> <label>자바 개발자</label>
                 <br>
-                <input type="radio" > <label>스프링, 스프링부트 개발자</label>
+                <input type="radio" name="field" value="spring" required> <label>스프링, 스프링부트 개발자</label>
                 <br>
-                <input type="radio" > <label>AI agent 개발자</label>
+                <input type="radio" name="field" value="ai" required> <label>AI agent 개발자</label>
             </div>
 
             <a>
                 지원동기
             </a>
-            <textarea id="motive" cols="60" rows="5" style="display: block;">지원동기를 간략히 적어주세요.</textarea>
+            <textarea id="motive" cols="60" rows="5" style="display: block;" required placeholder="지원동기를 간략히 적어주세요"></textarea>
             
             <input type="submit" value="접수하기">
             <input type="reset" value="다시쓰기">
