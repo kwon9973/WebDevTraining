@@ -1,0 +1,5 @@
+배치방법
+    -static: 문서의 흐름에 맞춰 배치함 기본값
+    -relative: 위칫값을 지정
+    -absolute: 
+    -fixed 
