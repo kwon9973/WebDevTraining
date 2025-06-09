@@ -1,0 +1,11 @@
+display:
+    -block
+    -inline
+    -inline-block
+    -flex
+    -grid
+
+float
+    -left: 해당요소 왼쪽으로 배치함
+    -right: 
+    -
