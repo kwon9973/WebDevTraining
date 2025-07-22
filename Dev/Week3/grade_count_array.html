@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+ <pre id="output"></pre>
+    
+ </pre>
+
+
+    <script>
+        
+
+        let gradeCount = {
+            A: 0,
+            B: 0,
+            C: 0,
+            D: 0,
+            F: 0
+        };
+
+        let scores = [95, 88, 77, 70, 66, 55];
+
+        for(let score of scores){
+            if(score >= 90){
+                gradeCount.A++;
+            }else if(score >= 80){
+                gradeCount.B++;  
+            }else if(score >= 70){
+                gradeCount.C++;  
+            }else if(score >= 60){
+                gradeCount.D++;  
+            }else if(score < 60){
+                gradeCount.F++;  
+            }
+
+        }
+
+        let output = `
+            학점별 분포결과
+
+            A학점 : ${gradeCount.A}명
+            
+            B학점 : ${gradeCount.B}명
+            
+            C학점 : ${gradeCount.C}명
+            
+            D학점 : ${gradeCount.F}명
+            
+            F학점 : ${gradeCount.A}명
+        `;
+
+        document.getElementById("output").innerHTML = output;
+
+
+
+    </script>
+    
+</body>
+</html>

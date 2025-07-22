@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 기본 레이아웃 (중앙 정렬 - flexbox 사용) 
+            
+            *화면너비
+            787px 이하
+            768px ~1023px
+            1024px 이상
+
+        */
+
+        body{
+            display: flex; /*플렉스 컨테이너로 설정*/
+            justify-content: center; /* 가로 정렬 */
+            align-items: center; /* 세로 정렬 */
+            height: 100vh; /* 뷰포트 높이 100% (화면 전체높이) */
+            background: url(/week2/Image/bg-dark.jpg) no-repeat fixed;
+            background-size: cover;
+        }
+
+        h1{
+            font-size: 4rem;
+
+        }
+
+
+        
+       
+        /*1) 데스크톱용미디어 쿼리가 적용되지 않는 기본상태 화면크기가 1024px이상일때 적용*/
+        @media screen and (min-width: 1024px){
+            body{
+                background: url(/week2/Image/bg-dark.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+        /*테블릿 용-화면 크기 : 768px ~ 1023px*/
+        @media screen and (min-width: 768px) and (max-width: 1023px){
+            body{
+                background: url(/week2/Image/bg-light.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+        /*모바일용 767px 이하*/
+        @media screen and (max-width: 767px){
+            body{
+                background: url(/week2/Image/bg-small.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>미디어 쿼리</h1>
+
+</body>
+</html>

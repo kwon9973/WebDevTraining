@@ -1,0 +1,45 @@
+/* 기본 스타일을 초기화 한다 
+    -브라우저마다 다른 기본 스타일을 통일시키기 위함
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 패딩과 보더를 요소크기에 포함 */
+}
+
+body{
+    background: rgb(9, 100, 160);
+}
+
+/*기본 레이아웃 (모바일 우선)
+    가장작은 레이아웃 스타일링 시작*/
+
+#container{
+    text-align: center;
+    width: 320px; /*컨테이너 너비 고정*/
+    margin: 50px auto;
+}
+
+.card{
+    position: relative; /*기준점이 된다 (.words의 자식요소의 절대위치 선정한것임)*/
+    float: left;
+    width: 300px;
+    height: 500px;
+    margin: 20px 10px;
+    border: 1px solid rgb(233, 202, 62);
+    background-color: bisque;
+}
+
+@media screen and (min-width: 1440px) {
+    #container{
+        width: 1140px;
+        margin: 50px auto;
+    }
+}
+.words{
+    position: absolute; /*절대 위치*/
+    left: 10px;
+    top: 300px;
+    padding: 10px;
+}

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이 체크기</title>
+
+    <style>
+        .container{
+            text-align: center;
+            height: 100vh;
+        }
+
+        .result-emoji{
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .result-text{
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2d3436;
+
+        }
+        .hidden{
+            display: none;
+        }
+
+        .result-card{
+            border: 2px solid black;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        
+        <h1>나이 체크기</h1>
+
+        <h3>나이를 입력하고 아래 확인해보세요!</h3>
+
+        <div class="input-group">
+            <label for="ageInput">
+                나이 입력 (0 - 120)
+            </label>
+            <input type="text" id="ageInput" placeholder="25" min="0" max="120">
+        </div>
+
+        <button class="button" onclick="checkAge()">나이 확인하기</button>
+
+
+        <!--결과 확인-->
+        <div id="ageResult" class="result-card hidden">
+            <div id="ageEmoji" class="result-emoji"></div>
+            <div id="ageText" class="result-text"></div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <script>
+        function checkAge(){
+
+
+            let ageInput = document.getElementById("ageInput").value;
+
+            if(ageInput === ""){
+                alert("나이를 입력하시요!");
+                ageInput = document.getElementById("ageInput").focus();
+                return;
+            }
+
+            //120세 초과라면 경고창 뛰우기
+            //0세여도 경고창뛰우기
+            //소수점 검증 math.floor()
+            //음수 -숫자는 안돼요
+            //모든검증통과 - 나이에따른 분류
+            // 65이상 - 어르신
+            // 20이상 - 성인 생인 앤증 왠료
+            // 14이상 - 청소년 배헤자 뎅의게 팰요해여
+            //결과 인증하기
+
+            if(ageInput > 120){
+                alert("나이를 120세를 초과할 수 없어요")
+                ageInput = document.getElementById("ageInput").focus();
+                return;
+            }else if(ageInput < 1){
+                alert("나이는 0일수 없어요! 1이상 입력해주세요!")
+                ageInput = document.getElementById("ageInput").focus();
+                return;
+            }else if(ageInput % 1 > 0){
+                alert("나이는 정수로 입력해주세요")
+                ageInput = document.getElementById("ageInput").focus();
+                return;
+            }else if(isNaN(ageInput) || ageInput.trim() === ''){
+                alert("숫자만 적어주세요!");
+                ageInput = document.getElementById("ageInput").focus();
+                return;
+            }else{
+                if(ageInput >= 65){
+                    document.getElementById("ageText").textContent = ageInput + "세는 어르신이네요! 건강하세요.";
+                    document.getElementById("ageEmoji").textContent = "👴👵🏻";
+                }else if(ageInput >= 20){
+                    document.getElementById("ageText").textContent = ageInput + "세는 성인이시네요. 성인인증체크";
+                    document.getElementById("ageEmoji").textContent = "🧑👩‍🦰";
+                }else if(ageInput >= 14){
+                    document.getElementById("ageText").textContent = ageInput + "세는 청소년이시네요. 보호자 동의가 필요해요.";
+                    document.getElementById("ageEmoji").textContent = "👦👧";
+                }else if(ageInput < 14){
+                    document.getElementById("ageText").textContent = ageInput + "세는 어린이입니다. 부모님과 함께 이용하세요.";
+                    document.getElementById("ageEmoji").textContent = "👦👧";
+                }
+                document.getElementById("ageResult").classList.remove("hidden");
+            }
+            console.log(document.getElementById("ageText").innerText);
+            
+        }
+
+
+        window.onload = function(){
+            alert("나이를 적어주시면 감사하겠습니다.");
+            console.log("나이를 입력하고 어떤 연령대인지 확인해보세요!")
+        }
+
+        document.addEventListener('keypress', function(any){
+            if(any.key === 'Enter'){
+                checkAge();
+            }
+        })
+    </script>
+</body>
+</html>

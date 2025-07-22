@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+   <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 120px;
+            display: inline-block;
+            margin: 10px;
+        }
+        li a{
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a[href $= jpg]{
+            background: url(/Dev/week2/Image/1-2.jpg) no-repeat fixed ;
+        }
+          a[href $= jpeg]{
+            background: url(/Dev/week2/Image/1-2.jpg) no-repeat fixed ;
+        }
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="/Dev/week2/Image/2-2.jpg" class="flat" title="us-english">영어</a>
+        </li>
+        <li>
+            <a href="/Dev/week2/Image/중앙.jpeg" class="flat" title="kor-hangul">한글</a>
+        </li>
+        <li>
+            <a href="#" class="button" title="china-chinese">중국어</a>
+        </li>
+        
+    </ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        p{
+            font-size: 1.5rem;
+        }
+
+        /* 반응형 이미지 만들기 */
+
+        .top{
+            /* 이미지가 부모요소의 너비를 넘지않도록 제한 
+            화면이 작아지면 이미지도 자동으로 작아짐 
+            화면이 커져도 원본 이미지 크기이상으로는 커지지 않음*/
+            max-width: 100%;   
+            /* 너비의 미지가 안꺠짐 */
+            height: auto; 
+
+        }
+    </style>
+</head>
+<body>
+    <div>
+        바라우저 창의 크기를 조절해보세요<br>
+        <img src="https://images.pet-friends.co.kr/storage/pet_friends/product/id/5/9/a/8/2/6/0/59a8260f8d5b73da242746d758199584/10000/0ad9e0236ca6430fae2645bf5791ea97.jpg" alt="책" class="top">
+    </div>
+</body> 
+</html>

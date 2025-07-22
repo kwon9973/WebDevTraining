@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 120px;
+            display: inline-block;
+            margin: 10px;
+        }
+        li a{
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .flat{
+            border: 1px solid rgb(240, 25, 25);
+        }
+
+
+        /*class 속성값에 button이 포함된 요소에 스타일을 적용*/
+        a[class~="button"]{
+            box-shadow: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            border: 1px solid #222;
+        }
+
+    
+        /*us 로 시작하는 속성값은 적용됨*/
+         a[title|="us"]{
+            width: 100px;
+            font-size: 30px;
+            background: url(/Dev/week2/Image/bg-dark.jpg);
+        }
+
+
+        a[title|="kor"]{
+            width: 100px;
+            font-size: 30px;
+            background: url(/Dev/week2/Image/bg-light.jpg);
+        }
+
+        /* THIS DOESN'T WORK ONLY THE FIRST WORD COUNTS */
+        a[title|="chinese"]{
+            width: 100px;
+            font-size: 30px;
+            background: url(/Dev/week2/Image/bg-light.jpg);
+        }
+
+        a[title ^= "ch"]{
+            margin: 100px;
+        }
+
+        a[title ^= "ko"]{
+            margin: 100px;
+        }
+
+        
+
+
+    </style>
+
+
+
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#" class="flat" title="us-english">영어</a>
+        </li>
+        <li>
+            <a href="#" class="flat" title="kor-hangul">한글</a>
+        </li>
+        <li>
+            <a href="#" class="button" title="china-chinese">중국어</a>
+        </li>
+        
+    </ul>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(100px,1fr));
+            grid-template-rows: repeat(3, minmax(100px, 1fr));
+            gap: 1.6rem;
+            background-color: rgb(23, 134, 134);
+        }
+        .box{
+            padding: 15px;
+            color: white;
+            text-align: center;
+            background-color: rgb(36, 241, 173);
+            width: auto-fit;
+            grid-column-start: 2;
+        }
+        .box2{
+            background-color: rgb(73, 126, 38);
+            padding: 15px;
+            color: white;
+            text-align: center;
+            grid-column-start: 1;
+            grid-row-end: span 2;
+        }
+        .box3{
+            background-color: rgb(127, 29, 136);
+            padding: 15px;
+            color: white;
+            text-align: center;
+            grid-column-start: span 2;
+        }
+        .box4{
+            padding: 15px;
+            color: white;
+            text-align: center;
+            background-color: rgb(209, 58, 58);
+            width: auto-fit;
+        }
+        .box5{
+            padding: 15px;
+            color: white;
+            text-align: center;
+            background-color: rgb(47, 117, 207);
+            width: auto-fit;
+        }
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <div class="container">
+        <div class="box">box1</div>
+        <div class="box2">box2</div>
+        <div class="box3">box3</div>
+        <div class="box4">box4</div>
+        <div class="box5">box5</div>
+    </div>
+</body>
+</html>

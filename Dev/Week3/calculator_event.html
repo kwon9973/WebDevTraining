@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    .calculate{
+        background: rgb(170, 170, 170);
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        width: 20%;
+        margin: 0 auto;
+    }
+    h1{
+        text-align: center;
+        color: black;
+        margin-bottom: 20px;
+    }
+    #display{
+        width: 100%;
+        height: 50px;
+        font-size: 24px;
+        padding: 10px;
+        border: 2px solid black;
+        margin-bottom: 15px;
+        background-color: rgb(221, 221, 221);
+        box-sizing: border-box;
+    }
+    .buttons{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);/*4개 행으로 1fr일정한사이즈로*/
+        grid-template-rows: repeat(5, 50px);
+        gap: 10px;
+    }
+
+    /*모든 버튼의 공통 스타일*/
+    button{
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+
+    }
+
+    button:hover{
+        background-color: green;
+    }
+    .number{
+        background-color: grey;
+        color: rgb(255, 255, 255);
+    }
+    .number:hover{
+        background-color: rgb(211, 174, 95);
+        color: black
+    }
+    .operator{
+        background-color: rgb(48, 48, 165);
+        color: white;
+    }
+    .operator:hover{
+        background-color: aquamarine;
+        color:black;
+    }
+    .clear{
+        background-color: rgb(177, 16, 16);
+        color: white;
+    }
+
+    .eqauls{
+        background-color: rgb(27, 189, 211);
+        color: rgb(0, 0, 0);
+        grid-row: span 2;
+    }
+
+    .eqauls:hover{
+        background-color: rgb(1, 65, 102);
+        color: white;
+    }
+    .zero{
+
+    }
+
+
+</style>
+
+</head>
+<body>
+    <div class="calculate">
+        <h1>계산기</h1>
+        <input type="text" id="display" readonly>
+        
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay('C')">C</button>
+            <button class="clear" onclick="backSpace()">🔙</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+             
+            <button class="number" onclick="appendToDisplay('7')">7</button>
+            <button class="number" onclick="appendToDisplay('8')">8</button>
+            <button class="number" onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+            
+            <button class="number" onclick="appendToDisplay('4')">4</button>
+            <button class="number" onclick="appendToDisplay('5')">5</button>
+            <button class="number" onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+              
+            <button class="number" onclick="appendToDisplay('1')">1</button>
+            <button class="number" onclick="appendToDisplay('2')">2</button>
+            <button class="number" onclick="appendToDisplay('3')">3</button>
+            <button class="eqauls" onclick="calculate('=')">=</button>
+              
+            <button class="number zero" onclick="appendToDisplay('0')">0</button>
+            <button class="decimal" onclick="appendToDisplay('.')">.</button>
+        </div>
+
+        <div class="button">
+            
+        </div>
+        
+
+    </div>
+
+    <script>
+        let currentInput = '';
+
+        function appendToDisplay(value){
+            const display = document.getElementById("display");
+            currentInput += value;
+            display.value = currentInput;
+
+        }
+
+        function backSpace(){
+            const display = document.getElementById("display");
+
+            currentInput = currentInput.slice(0,-1); //현재 입력값에샤 마지막 문자 제거
+            
+            display.value = currentInput;
+        }
+
+        function calculate(){
+            const display = document.getElementById("display");
+
+            try{
+                if(currentInput === ''){
+                    return;
+                }
+
+                let result = eval(currentInput);
+                //결과가 소수점 8자리까지만 표시
+                resut = Math.round(result*100000000) / 100000000; 
+
+                display.value = result;
+                //다음 계산을 위해 결과를 새로운 시작점으로 설정
+                currentInput = result.toString();
+
+            }catch(error){
+                display.value = 'error';
+                clearDisplay();
+            }
+        }
+
+        function clearDisplay(){
+            const display = document.getElementById("display");
+            currentInput = '';
+            display.value = '';
+        }
+
+
+        document.addEventListener('keydown', function(event){
+            const key = event.key; //눌린 값 가져오기
+            if(key >= '0' && key <='9'){
+                appendToDisplay(key);
+            }
+        });
+
+        
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <script>
+        let scores =[95, 88, 80, 82, 77, 70, 66, 55];
+        let studetnNames = ["김자식", "이철수", "배철수", "김광식", "제줏별", "콩심이", "신혜진", "왜불러"];
+
+        let gradCount = {A:0, B:0, C:0, D:0, F:0};
+
+        function getGrade(score){
+            if(score >= 90) return 'A';
+            if(score >= 80) return 'B';
+            if(score >= 70) return 'C';
+            if(score >= 60) return 'D';
+            if(score < 60) return 'F';
+        }
+
+        document.write("<div class='container'>");
+        document.write("<h1> 학생 성적 관리 시스템 </h1>");
+        
+        for(let i = 0; i < scores.length; i++){
+            let currentScores = scores[i];
+        }
+
+        document.write("</div>");
+
+
+    </script>
+</body>
+</html>

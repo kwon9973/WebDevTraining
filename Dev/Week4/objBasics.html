@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let Person = {
+            name: 'John',
+            age: '25',
+            height: '180'
+        }
+
+        console.log(Object.keys(Person));
+        console.log(Object.values(Person))
+        let keyArr = Object.keys(Person);
+
+        for(let i = 0; i < keyArr.length; i++){
+            console.log(`key: ${keyArr[i]} value: ${Person[keyArr[i]]}`);
+        }
+
+
+        let newArray = Object.entries(Person);
+        console.log(newArray);
+        for(let i = 0; i < newArray.length; i++){
+            console.log(newArray[i]);
+        }
+
+        let arr = [1,2,3];
+        for (let i of arr){
+            console.log(arr[i]);
+        }
+
+        let cls = {
+            a : 'a',
+            b : 'b',
+            c : 'c'
+        }
+        for (let i in cls){
+            console.log(cls[i]);
+        }
+
+        let newArray3 = arr.map((elem, index)=>{
+            return `element: ${elem} index ${index}s`
+        })
+
+        console.log(newArray3)
+
+    </script>
+</body>
+</html>

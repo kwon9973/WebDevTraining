@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: fit-content;
+            height: 860px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            background-color: #eee;
+            border: 1px solid #222;
+            margin-bottom: 30px;
+        }
+
+        .box{
+            padding: 5px 45px;
+            margin: 5px;
+        }
+
+        .box:nth-child(odd){
+            background-color: rgb(255, 187, 0);
+        }
+        .box:nth-child(even){
+            background-color: rgb(35, 200, 35);
+            font-weight: bold;
+        }
+
+        #box1{
+            margin-bottom: auto;
+        }
+
+       
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">
+            1
+        </div>
+        <div class="box" id="box2">
+            2
+        </div>
+        <div class="box" id="box3">
+            3
+        </div>
+        <div class="box" id="box4">
+            4
+        </div>
+    </div>
+</body>
+</html>

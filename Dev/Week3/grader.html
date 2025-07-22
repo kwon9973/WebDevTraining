@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A grade based on a score</title>
+
+    <style>
+        html, body{
+            background: linear-gradient(135deg, rgb(70, 233, 197), rgb(34, 201, 187));
+        }
+
+        .result{
+            width: 83%;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            border: 2px solid orange;
+            border-radius: 14px;
+            background: rgb(252, 220, 160);
+            padding: 20px;
+            padding-bottom: 14px;
+        }
+
+        .hidden{
+            display: none;
+        }
+        
+        .result-emoji{
+            margin-top: 0;
+        }
+        .result-rank{
+            font-weight: bold;
+            color: rgb(224, 135, 0);
+            font-size: x-large;
+        }
+        .result-text{
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+    
+        
+    </style>
+</head>
+
+
+
+<body>
+    <div style="background: white;
+    border-radius: 15px;
+    box-shadow: 1px 1px 15px rgb(146, 144, 144);
+    width: 23vw;
+    height: auto;
+    margin: 10px auto;
+    text-align: center;
+    padding-bottom: 10px;
+    ">
+
+        <h3 style="padding: 35px 10px;
+        margin: 0;
+        font-size:x-large;">
+            📊점수 등급 계산기
+        </h3>
+        <h3 style="text-align: left;
+        font-size:medium;
+        padding: 1px 20px;
+        margin: 0;">
+            📝점수를 입력하고 등급을 확인해보세요!
+        </h3>
+        <div>
+            <h3 style="text-align: left;
+            padding: 1px 20px;
+            margin-top: 10px 0;
+            font-size: smaller;">
+                점수입력(0~100점):
+            </h3>
+            <input id="grade" type="text" placeholder="85" style="width: 89%;
+            padding: 9px;
+            border: 2px solid rgb(189, 188, 188);
+            border-radius: 8px;">
+        </div>
+
+        <button id="button" onclick="check()" style="width: 93%;
+        background: rgb(34, 201, 187);
+        color: white;
+        text-shadow: 1px 1px 3px grey;  
+        border-radius: 8px;
+        border: 1px solid rgb(70, 233, 197);
+        height: 45px;
+        margin-top: 19px;">
+            📊등급 계산하기
+        </button>
+
+        <div class="result hidden" id="result-box">
+            <h1 class="result-emoji" id="result-emoji"></h1>
+            <p class="result-rank" id="result-rank"></p>
+            <p class="result-text" id="result-text"></p>
+        </div>
+
+
+    </div>
+    
+
+
+    <script>
+
+        function check(){
+
+            let grade = document.getElementById("grade").value;
+            let value = grade.split(".");
+            let mod = value[1];
+            
+            if(isNaN(grade)){
+                alert("숫자만 입력해주세요!");
+            }else if(grade < 0){
+                alert("점수가 0보다 작을수없습니다.");
+            }else if(grade > 100){
+                alert("점수가 100보다 클 수 없습니다.");
+            }else if(grade % 1 > 0 && mod.length > 1){
+                alert("점수는 소수점 첫쨰 자리까지만 입력해주세요! (예 85.5)");
+            }else{
+                if(grade >= 90){
+                    document.getElementById("result-emoji").textContent = "🏆";
+                    document.getElementById("result-rank").textContent = "A등급";
+                    document.getElementById("result-text").textContent = grade + "점은 A등급입니다! 최우수에요! 🎉";
+                }else if( grade >= 80){
+                    document.getElementById("result-emoji").textContent = "🥇";
+                    document.getElementById("result-rank").textContent = "B등급";
+                    document.getElementById("result-text").textContent = grade + "점은 B등급입니다! 우수에요! 👍";
+                }else if(grade >= 70){
+                    document.getElementById("result-emoji").textContent = "🥈";
+                    document.getElementById("result-rank").textContent = "C등급";
+                    document.getElementById("result-text").textContent = grade + "점은 C등급입니다! 보통이에요! 👍";
+                }else if(grade >= 60){
+                    document.getElementById("result-emoji").textContent = "🥉";
+                    document.getElementById("result-rank").textContent = "D등급";
+                    document.getElementById("result-text").textContent = grade + "점은 D등급입니다! 좀 더 노력해요! 👍";
+                }else if(grade < 60){
+                    document.getElementById("result-emoji").textContent = "😰";
+                    document.getElementById("result-rank").textContent = "F등급";
+                    document.getElementById("result-text").textContent = grade + "점은 F등급입니다! 다시 공부해야겠어요! 😰";
+                
+                }
+            }    
+            document.getElementById("result-box").classList.remove('hidden');
+        }
+        
+    </script>
+</body>
+</html>

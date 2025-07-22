@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        div{
+            width:300px;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .grad{
+            background: red;
+            background: radial-gradient(white, yellow, red);
+        }
+
+        .grad2{
+            background: red;
+            background: radial-gradient(circle at 50%, white, yellow, red);
+        }
+
+        .grad3{
+            background: linear-gradient(to bottom, pink, rgb(245, 147, 162) 50%,rgb(158, 43, 60));
+        }
+        .grad4{
+            border-radius: 50%;
+            background: blue;
+            background: radial-gradient(circle at 20% 20%, white, blue);
+            box-shadow: 2px 2px gray;  
+        }
+    </style>
+</body>
+    <div class="grad4">
+        hello world
+    </div>
+</html>

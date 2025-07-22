@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        const greet = function()
+        {
+            return "마";
+        }
+
+        const greet2 = () => {return "마아";}
+        //return 생략가능 명령줄이 1줄일떄는
+
+        const greet3 = () => "마아아";
+
+
+        document.write(greet3());
+
+
+
+        const getTime = function(){
+            return new Date().toLocaleDateString();
+        }
+
+
+        document.write(`<p>${getTime()}`);
+
+    </script>
+
+
+    
+</body>
+</html>
