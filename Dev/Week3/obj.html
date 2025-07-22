@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let library = {
+            shelf : book,
+            librarian: 'cathy' 
+        }
+
+        let book = {
+            publishedDate: 'August',
+            title: 'Romeo and Juliet',
+            author: 'Shakesphere',
+            history : new legacy()
+        }
+
+        class legacy {
+            constructor(){
+                this.year = 'reneissance';
+                this.region = 'europe';
+            }
+        }
+       
+
+        document.write(`${book['history']['region']}`);
+
+        book.author = 'undefined';
+
+        document.write(`<p>author has changed to '${book.author}' <p> isn't it crazy how easy to edit the key value like this?`)
+        
+        document.write(`<p>${library.shelf.history.region}`)
+
+    </script>
+</body>
+</html>

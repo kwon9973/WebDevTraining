@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            background-color: rgb(250, 250, 250);
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            grid-template-rows: 80px 1fr 60px;
+            box-sizing: border-box;
+            gap: 20px;
+
+            max-width: 1200px;
+            min-height: 100vh; /* 윈도우 최대 높이로 */
+            margin: 0 auto; /* 가운데로 정렬*/
+        }
+
+
+
+
+        .header{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            grid-column: 1 / -1;
+            border-radius: 20px;
+            background: linear-gradient(45deg, rgb(79, 49, 112), rgb(62, 37, 129));
+            
+        }
+        .pic{
+            box-sizing: border-box;
+            border-radius: 50%;
+            border: 1px solid grey;
+            cursor: pointer;
+            box-shadow: 1px 1px 3px black;
+            width: 60px;
+            transition: opacity 0.1s ease;
+        }
+        .pic:hover{
+            opacity: 80%;
+            cursor: pointer;
+        }
+        h3{
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        h3:hover{
+            opacity: 80%;
+        }
+        .nav{
+            margin-left: auto;
+        }
+        .nav a{
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .nav a:hover{
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+
+
+        .main-content{
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+        }
+        .main-content h1{
+            color: #333;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+        .main-content p{
+            margin-bottom: 1rem;
+            text-align: justify; /* 양쪽 정렬 */
+        }
+
+
+
+        .side-bar{
+            background: #f1f2f3e8;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+        }
+
+
+
+
+
+        ul li{
+            list-style-type: none;
+            margin: 13px auto;
+        }
+
+
+
+        .footer{
+            grid-column: 1 / -1;
+            background: #343a40;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+
+        /*모바일 반응형 용*/
+        @media screen and (max-width: 768px){
+            .container{
+                grid-template-columns: 1fr;
+                grid-template-rows: 70px auto auto 50px;
+                gap: 15px;
+                padding: 15px;
+            }
+            .header{
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav{
+                gap: 1rem;
+            }
+            .main-content, .side-bar{
+                padding: 1rem;
+            }
+        }
+
+        @media screen and (min-width: 769px) and (max-width: 1024px){
+            .container{
+                grid-template-columns: 1fr 250px;
+                grid-template-rows: 70px auto auto 50px;
+                gap: 15px;
+                padding: 15px;
+            }
+            .header{
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .nav{
+                gap: 1rem;
+            }
+            .main-content, .side-bar{
+                padding: 1rem;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <img src="/week2/Image/중앙.jpeg"  class="pic" >    
+            </div> 
+            <div>
+                <h3 style="color: white;">중앙웹사이트</h3>
+            </div>
+            
+            <nav class="nav">
+                <a href="#">홈</a>
+                <a href="#">소개</a>
+                <a href="#">서비스</a>
+                <a href="#">연락처</a>
+            </nav>
+        </div>
+
+
+        <div class="main-content">
+            <h1>MAIN CONTENTS</h1>
+            <p>
+                A "grid" can refer to several things, including a visual layout system, a type of device, a network, or even an early name for a disease. 
+            </p>
+            <p>
+                In design, it's a structure for organizing content. In technology, it's a CSS layout tool.
+            </p>
+            <p>
+                In radiography, it's a device to absorb scattered radiation. The term also historically referred to a disease, and it can also be used to describe a network like the electricity grid or a social media profile layout. 
+            </p>
+        </div>
+
+
+        <div class="side-bar">
+            <ul>
+                <li>
+                    인기게시물                    
+                </li>
+                <li>
+                    자유게시판
+                </li>
+                <li>
+                    공지사항
+                </li>
+                <li>
+                    사연올림
+                </li>
+                <li>
+                    컨텐츠제작
+                </li>
+                <li>
+                    기타사항
+                </li>
+            </ul>
+        </div>
+
+
+
+
+        <div class="footer">
+            <div>
+
+            </div>
+            <div>
+                이용약관
+            </div>
+            <div>
+                
+            </div>
+            <div>
+                
+            </div>
+            <div>
+                
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

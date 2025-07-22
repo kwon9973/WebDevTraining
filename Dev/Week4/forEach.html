@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .employee-card{
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            transition: transform 0.2s ease;
+        }
+        .employee-card:hover{
+            transform: translateY(-2px) ;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .employee-name{
+            color: rgb(39, 25, 230);
+        }
+
+        .employee-info{
+            color: #666;
+            margin: 3px 0;
+        }
+
+        .section{
+
+        }
+        .section h2{
+
+        }
+        button{
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+        }
+        button:hover{
+            opacity: 0.7;
+            box-shadow: 0 4px 14px grey;
+        }
+
+        .output{
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            white-space: pre-line;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div id="employeeList" ></div>
+
+    <div class="employee-card">
+        <button onclick="displayAllEmployees()">1. 전직원확인</button>
+        <input  type="text" id="department" class="employee-card" placeholder="부서명"></input>
+        <button onclick= "displayEmployeeByDepartment()">조회</button>
+        <button onclick="displayOddPositionedEmployee()">3. 홀수 번째 직원확인</button>
+        <button onclick="DemonstrateIndexUsage()">4. 전직원수</button>
+        <button onclick="rank()">5. 직급순위</button>
+        <button onclick="calculateFullYear()">5. 직원별 연차계산</button>
+        <div id="output" class="employee-card"></div>
+        
+    </div>
+
+
+
+
+
+    <script>
+        //직원 데이터 구조
+        class employees2{
+            constructor(id = 1, name = '홍길동', department= '개발팀', position= '개발자', salary= 55000000, email= '@choongang.com', phone= '010-1234-5678', hireDate= '2020-03-15'){
+                this.id = id;
+                this.name = name;
+                this.department = department;
+                this.position = position;
+                this.salary = salary.toLocaleString();
+                this.email = email;
+                this.phone = phone;
+                this.hireDate = hireDate;
+            }
+        }
+
+
+
+
+        window.onload = function(){
+            displayEmployeeCards();
+        }
+
+
+
+
+
+        let employee = new employees2();
+        let employee2 = new employees2(2,'이자라', '개발팀','풀스택개발자','70000000','kwon1@gmail.com','010-1234-5678','2023-04-15');
+        let employee3 = new employees2(3,'홍덕규', '마켓팅팀','마켓팅담당자','50000000','kwon2@gmail.com','010-4321-5678','2022-04-15');
+        let employee4 = new employees2(4,'자우림', '마켓팅팀','마켓팅담당자','65000000','kwon3@gmail.com','010-1234-8765','2015-04-15');
+        let employee5 = new employees2(4,'유영규', '회계팀','회계사','65000000','kwon3@gmail.com','010-1234-8765','2025-04-15');
+        let employee6 = new employees2(4,'계두식', '회계팀','회계사','65000000','kwon3@gmail.com','010-1234-8765','2023-04-15');
+        let employeesArr = [employee,employee3,employee2,employee4, employee5, employee6];
+
+
+
+
+
+        function displayEmployeeCards(){
+            let html = '';
+            const container = document.getElementById('employeeList');
+
+            employeesArr.forEach((employee, index) => {
+                html += `
+                <div class = "employee-card">
+                    <div class ="employee-name">이름: ${employee.name} (${employee.position})</div>
+                    <div class ="employee-info">부서: ${employee.department}</div>
+                    <div class ="employee-info">급여: ${employee.salary.toLocaleString()}</div>
+                    <div class ="employee-info">이메일: ${employee.email}</div>
+                    <div class ="employee-info">번호: ${employee.phone}</div>
+                    <div class ="employee-info">입사일: ${employee.hireDate}</div>
+                    <p></p>
+                </div>`;
+            })
+
+            container.innerHTML = html;
+            console.log('정보 로딩 완료');
+        };
+
+
+
+
+        //전체 직원 목록을 화면, 콘솔에 출력
+        function displayAllEmployees(){
+            const output = document.getElementById('output');
+            let result = `----전체 직원 목록----<p>`;
+
+            employeesArr.forEach((employee)=>{
+                result += `${employee.name} - ${employee.position} <p>`
+                console.log(`${employee.name} - ${employee.position}<p>`)
+            });
+            output.innerHTML = result;
+        }
+
+
+
+        //어느 한 배열에서 한 부서에서 해당된 사람을 배열로 출력 
+        function findDepartmentFromAll(departmentName){
+            let arr = [];
+
+            employeesArr.forEach((employee) => {
+                if(employee.department == departmentName){
+                    arr.push(employee);
+                    console.log(arr);
+                }
+            })
+            return arr;
+        }
+
+
+
+
+        function findDepartmentFromArray(departmentName, array1){
+
+            let arr = [];
+
+            console.log(`${Array.isArray(array1)} --- error check ------------------- `);
+
+            for(let i = 0; i < array1.length; i++){
+                if(array1[i].department === departmentName){
+                    arr.push(array1[i]);
+                }
+            }
+            if(arr.length !== 0){
+                return `${departmentName}: ${arr.length}`;
+            }else{
+                return ` `;
+            }
+        }
+
+
+
+
+        function displayEmployeeByDepartment(){
+            const output = document.getElementById("output");
+            const department = document.getElementById("department");
+            let result = `====부서별 직원 현황====`;
+
+            if(department.value === null){
+                output.innerHTML = '부서를 입력해주세요.'
+            }else{
+                let name = findDepartmentFromAll(department.value);
+
+                name.forEach((employee)=>{
+                    result += `
+                        <div class ="employee-name">이름: ${employee.name} (${employee.position})</div>
+                        <div class ="employee-info">부서: ${employee.department}</div>
+                        <div class ="employee-info">급여: ${employee.salary.toLocaleString()}</div>
+                        <div class ="employee-info">이메일: ${employee.email}</div>
+                        <div class ="employee-info">번호: ${employee.phone}</div>
+                        <div class ="employee-info">입사일: ${employee.hireDate}</div>
+                        <p></p>`;
+                })
+                output.innerHTML = result;
+            }
+        }
+
+
+
+
+
+        function displayOddPositionedEmployee(){
+            const output = document.getElementById('output');
+            let oddPositionedArr = [];
+            let count = 0;
+            let totalIncome = 0;
+            let result = 
+            `
+            <p>====홀수 번째 직원들====</p>
+            <p>조건: 목록에서 홀수 번째 위치 (1,3,5번쨰)에 있는 직원</p>
+            홀수 번쨰 직원 목록:
+            `;
+
+
+            for(let i = 0; i < employeesArr.length; i++){
+                if(i % 2 === 0){
+                    result += `<div class ="employee-name">${i+1}번째: ${employeesArr[i].name} </div>
+                        <div class ="employee-info">직책: ${employeesArr[i].position}</div>
+                        <div class ="employee-info">부서: ${employeesArr[i].department}</div>
+                        <div class ="employee-info">급여: ${employeesArr[i].salary.toLocaleString()}</div>
+                        <p></p>`;
+                        count++;
+                        totalIncome += parseInt(employeesArr[i].salary);
+                        oddPositionedArr.push(employeesArr[i]);
+                }
+            }   
+
+
+            result += 
+            `
+            <div>홀수 번쨰 직원 통계:</div>
+            <div>총 인원: ${count}명</div>
+            <div>총 급여: ${totalIncome.toLocaleString()}원</div>
+            <div>평균 급여: ${parseInt(totalIncome / count).toLocaleString()}원</div>
+            <p></p>
+            <div>부서별 분포: </div>
+            <div>${findDepartmentFromArray('개발팀', oddPositionedArr)}</div>
+            <div>${findDepartmentFromArray('마켓팅팀', oddPositionedArr)}</div>
+            <div>${findDepartmentFromArray('회계팀', oddPositionedArr)}</div>
+            `
+
+            console.log(result);
+            output.innerHTML = result;
+        }
+
+
+        function DemonstrateIndexUsage(){
+            let result = `<p>====인덱스 활용 패턴====</p>`;
+            let first;
+            let last;
+
+
+
+
+
+            result += `<div>forEach에서 인덱스를 활요하는 다양한 패턴</div>`;
+            //순번표시 1부터 가장 기본적인 패턴
+            employeesArr.forEach((employee, index)=>{
+                result += `<div>${index+1}번. ${employee.name}님 </div>`;
+            });
+
+
+
+        
+
+            result += `<p></p><div>첫 번째/마지막 요소 특별 처리: </div>`
+            employeesArr.forEach((element, index, array)=>{
+                if(index === 0 ){
+                    first = `<div>🥇첫 번째: ${array[index].name} </div>`;
+                    result += first;
+                }else if(index === (array.length-1)){
+                    last = `<div>🏁마지막: ${array[array.length-1].name} </div>`;
+                    result += last;
+                }else{
+                    result += `<div>👤${array[index].name}</div>`;     
+                }
+            })
+            
+
+
+            result += `<p></p><div>짝수/홀수 인덱스 구분: </div>`;
+            employeesArr.forEach((employee, index, array)=>{
+                if(index % 2 == 0){
+                    result += `<div>⚪짝수 인덱스[${index}]: ${employee.name}</div>`
+                }else{
+                    result += `<div>⚫홀수 인덱스[${index}]: ${employee.name}</div>`
+                }   
+            })
+
+
+            let pivot = 0;
+            let pivotIndex = 0;
+            let group = [];
+            result += `그룹 단위 처리(3명씩):`;
+            employeesArr.forEach((employee, index, array)=>{
+                employeesArr.forEach((employee, index)=>{
+                    if(Math.floor(index / 3) <= 0){
+                        index = pivotIndex;
+                        group[pivot].push(array[index]);
+                    }
+                })
+
+
+            })
+
+            document.getElementById("output").innerHTML = result;
+        }
+
+
+
+        function calculateFullYear(){
+
+                let result = `<div>===직원별 연차 계산===</div> <p></p>`
+                let date = new Date();
+                let currentYear = date.getFullYear();                
+                let totalWorked = 0;
+                let expert = 0;
+                let newbie = 0;
+
+
+                result += `<div>📅기준 연도 : ${currentYear}년</div><p></p>`;
+                result += `<div>🏘️직원별 근무 연차</div>`;
+
+                employeesArr.forEach((employee, index, array)=>{
+                    let sliced;
+                    let exp;
+                    sliced = parseInt(array[index].hireDate.slice(0,4));
+                    let yearWorked = currentYear - sliced;
+                    totalWorked += yearWorked;
+
+                    if(yearWorked < 3){
+                        exp = ' 🐤 신입';
+                        newbie++;
+                    }else if(yearWorked >= 3 && yearWorked < 5){
+                        exp = ' 💪 숙련자';
+                        expert++;
+                    }else if(yearWorked >= 5){
+                        exp = ' 🏆 베테랑';
+                        expert++;
+                    }
+                    
+
+
+                    result += `<div>${index+1} ${employee.name}: ${yearWorked}년차 ${exp}</div>`;
+                    result += `<div>입사일: ${employee.hireDate}</div>`;
+                    result += `<div>부서: ${employee.department}</div><p></p>`;
+                })
+
+                result += `<div>통계 정보</div>`;
+                result += `<div>평균 근무 연차: ${parseFloat(totalWorked / employeesArr.length).toFixed(1)}년</div>`;
+                result += `<div>숙련 직원 수: ${expert}명 (3년차 이상)</div>`;
+                result += `<div>신입/경험자: ${newbie}명</div>`;
+
+                document.getElementById('output').innerHTML = result;
+        }
+
+            
+
+    </script>
+</body>
+</html>

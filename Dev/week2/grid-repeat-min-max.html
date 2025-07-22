@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 600px;
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: 200px;
+
+            /* minmax(최소값, 최대값)*/
+            grid-auto-rows: minmax(300px, auto);
+        }
+        .item{
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+            color: aliceblue;
+        }
+        .item:nth-child(even){ 
+            background: rgb(76, 68, 185);
+        }
+        .item:nth-child(odd){
+            background: rgb(110, 29, 148);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            LLM based agents, hereinafter also referred to as LLM agents for short, involve LLM applications that can execute complex tasks through the use of an architecture
+        </div>
+        <div class="item">
+            LLM based agents, hereinafter also referred to as LLM agents for short, involve LLM applications that can execute complex tasks 
+        </div>
+        <div class="item">
+            LLM based agents, hereinafter also referred to as LLM agents for short, involve LLM applications 
+        </div>
+        <div class="item">
+            LLM based agents, hereinafter also referred to as LLM agents for short,
+        </div>
+        <div class="item">
+            LLM based agents, hereinafter also referred to as LLM agents 
+        </div>
+        <div class="item">
+            LLM based agents, hereinafter also referred to as LLM agents for short, involve LLM applications
+        </div>
+        <div class="item">
+           LLM based agents, hereinafter also referred to as LLM agents for short, involve LLM applications that can execute complex tasks
+        </div>
+        <div class="item">
+    </div>
+</body>
+</html>

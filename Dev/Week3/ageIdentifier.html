@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+
+
+<body>
+    <script>
+        (function(){
+            let name1 = prompt("이름을 입력하세요");
+            let age = prompt("나이를 입력하세요");
+            let isAdult = false;
+
+            if (age >= 19){
+                isAdult = true;
+            }else{
+                isAdult = false;
+            }
+            let isAdult2 = {
+                false: '미성년자',
+                true : '성인'
+            };
+            
+            document.write(`안녕하세요 ${name1}님 <p>`);
+            document.write(`당신은 ${isAdult2[isAdult]}입니다`);
+        }());
+        
+        console.log(typeof(name1));
+        console.log(typeof(age));
+        console.log(typeof(isAdult));
+            
+    </script>
+</body>
+</html>

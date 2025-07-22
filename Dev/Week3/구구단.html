@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div style="display: flex;
+    flex-direction: row;" id="box">
+        <div id="element">
+
+        </div>
+        <div id="element2">
+            
+        </div>
+        <div id="element3">
+            
+        </div>
+        <div id="element4">
+            
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        
+
+        let choice;
+        choice = 2;
+
+
+        do{
+
+            for (let i = 0; i <= 9; i++){
+
+                for(let j = 0; j <= 9; j++){
+                    document.write(`${i} X ${j} = ${i * j}`);
+                    document.write("<p>")
+                }
+
+            }
+
+            choice--;
+        }while(choice > 0)
+
+    </script>
+</body>
+</html>

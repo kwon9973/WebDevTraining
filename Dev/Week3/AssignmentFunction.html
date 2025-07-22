@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let value = prompt("얼마까지 더할까요?"); /* String value retrun - 숫자로 바꿔라 PARSEiNT*/
+        
+        document.write("1 부터 " + value + "까지 더하면 " + calcSum(parseInt(value)));
+
+        function calcSum(number){
+            let sum = 0;
+            let i = 1;
+            do{
+                sum = sum + i
+                i++;
+            }while(i <= number);
+            
+            return sum;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+1. 반응형 웹디자인
+    -기기에따라 다양한 화면크기 변화
+        -웹요소에 따라재배치
+        -표시방법만 바꾸어 사이투 구현
+
+
+
+
+2. 뷰포트
+    -뷰포트지정하면 기기의화면에 맞추어 확대/축소가능
+    -<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -단위
+        -vw(view width) : 1vw는 뷰포트의 너비의 1%
+        -vh(view height): 1vh는 뷰포트의 길이의 1%
+
+
+
+
+2.반응형 요소만들기
+    -상대값으로 글자크기 지정하기
+        -em & rem 단위
+    -em 단위
+        -부모요소의 지정한 글꼴 대문자 m의 너비를 1em으로 놓고 상대적으로 값계산
+        -부모요소글자크기 지정안하면 body요소의 기본크기 적용
+            -body {font-size: 20px}에서 2em은 40px가 됨 (그안에있는 div도 똑같이 적용)
+
+    -rem 단위
+        -부모요소 단위 무관 상관없이 최상층의 기본값인 혹은 절대값으로(16px) 계산
+        -상관없이 2rem은 32px
+
+    -max-width: 100%
+        -크기에 따라 100%사용하는 요소
+
+
+
+
+미디어 쿼리
+    -media query
+        -접속하는 기기 화면크기에 따라서 레이아웃 달라짐
+    -미디어 쿼리 구문
+        -@media 속성을 사용해 특정 미디어에서 어떤 css를 적용할건지 지정해줌
+        -@media [only | not] 미디어 유형 [and 조건] * []
+            -only
+            -not : not
+            -and : 
+        예)
+            @media screen and (min-width: 768px) and (max-width: 1439px){
+                ~~~
+            }
+
+            -projetion
+
+        -미디어 유형
+            -미디어별 적용할 css를 따로 작성함
+            -@media 속성의 미디ㅓ 유형 종류
+                -all : 모든 미디어 유형에서 사용할 css를 정의 기본값
+                -screen : 컴퓨터 스크린에서 사용할 css를 정의
+
+                -화면 회전 속성
+                    -orientation: portrait 세로모드 
+                    orientation: landscape 가로모드
+
+
+
+
+3) 미디어 쿼리 중단점
+    -미디어 커리작성 할떄 화면 크기에따라 서로 다른 CSS적용할 분기점
+    -대부분의 기기의 환면 크기를 기중으로 함
+    -모바일,태블릿, 데스크톱 정도로 구분
+        -처리속도 화명 크기 등에서 모바일 제약 조건이 더 많음
+            -레이아웃을 기본으로 하여 css만듦
+        -화면이 큰 테블릿데스크톱 맞춰, 더 많은 기능 스타일 추가함
+        -스마트폰
+            -min-width의 세로와 가로를 portrait 320px, landscape 480px 지정
+        -테블렛
+            -세로 780px 이상
+            -가로 1024px 이상으로 지정
+        -데스트톱
+            -화면크기 1024px이상이면 데스크톱으로 설정함
+
+
+
+
+
+미디어 쿼리 적용하기
+    -<link rel="stylesheet" media = "print" href="">
+    2. 웹문서에 직접정의하기
+        -
+        <style media = "screen and (max-width: 300px)">
+        body{
+            background-color: orange;
+        }
+        </style>
+
+        -
+        <style>
+         @media and "screen and (max-width: 300px)">
+        body{
+            background-color: orange;
+        }
+        </style>
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        "

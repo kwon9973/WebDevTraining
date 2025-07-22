@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .button{
+            cursor: pointer;
+        }
+        .button :hover{
+            opacity: 70%;
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, rgb(111, 21, 230), rgb(140, 76, 243));
+            margin: 0;
+            padding: 20px;
+            color: rgb(94, 88, 81);
+            text-align: center;
+        }
+
+        .container{
+            max-width: 600px;
+            background: rgba(255, 231, 235, 0.884);
+            border-radius: 20px;
+            box-shadow: 2px 2px 4px rgb(134, 133, 133);
+            margin: auto auto;
+        }
+
+        h1{
+            padding: 30px 60px;
+            margin: 0;
+        }
+
+        .input-group{
+            margin: 25px;
+        }
+        label{
+            font-size: larger;
+            font-weight: bold;
+        }
+
+        input[type="number"]{
+            width: 100%;
+            padding: 12px;
+            border: 2px solid black;
+            box-sizing: border-box;
+
+        }
+
+        
+        input[type="number"]:focus{
+            border: 2px solid rgb(250, 9, 9);
+            outline: none;
+        }
+
+        .button{
+            width: 80%;
+            padding: 5px;
+            margin: 1px 0;
+            box-sizing: border-box;
+
+        }
+        .button:hover{
+            opacity: 80%;
+        }
+
+        #resultbox{
+            background-color: antiquewhite;
+            border: 2px solid rgb(233, 247, 40);
+            margin: 0;
+        }
+        .result-box h3{
+            margin: 0;
+        }
+
+
+
+        /*result-box hidden*/
+        .hidden{
+            display: none;
+        }
+        
+        .hidden{
+            display: contents;
+        }
+
+
+
+    </style>
+    
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>
+            변수와 기본계산
+        </h1>
+
+        <div class="input-group">
+            <label for="firstNumber" >첫번쨰 숫자: </label>
+            <input type="number" id="firstNumber" placeholder="10"> 
+        </div>
+
+        <div class="input-group">
+            <label for="secondNumber" >두번쨰 숫자: </label>
+            <input type="number" id="secondNumber" placeholder="5"> 
+        </div>
+
+        <br>
+
+        <button class="button" onclick="calculate('add')">더하기</button>
+        <button class="button" onclick="calculate('substract')">뺴기</button>
+        <button class="button" onclick="calculate('multiply')">곱하기</button>
+        <button class="button" onclick="calculate('divide')">나누기</button>
+        
+        <div id="resultbox" class="result-box hidden">
+            <h3>계산결과</h3>
+            <div id="calculation"></div>
+            <div id="result" class="result-value"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function calculate(operator){
+            let value = Number(document.getElementById("firstNumber").value);
+            let value2 = Number(document.getElementById('secondNumber').value);
+
+            let result;
+
+            if(operator === 'add'){
+                result = value + value2;
+            }
+            if(operator === 'substract'){
+                result = value - value2;
+            }
+            if(operator === 'multiply'){
+                result = value * value2;
+            }
+            if(operator === 'divide'){
+                result = value / value2;
+            }
+
+
+            //계산결과 출력하기
+            //textContent는 HTML 요소의 글자 내용을 바꾸는 명령어
+            document.getElementById("calculation").textContent = value + " 와 " + value2;
+            document.getElementById("result").textContent = result;
+
+            document.getElementById("reslutBox").classList.remove("hidden");
+            
+            console.log("결과: " + result);
+        }
+
+        //페이지가 처음로드될때 자동으로 실행되는 함수
+        window.onload = function(){
+            console.log("계산기 시작!")
+        }
+    </script>
+</body>
+</html>

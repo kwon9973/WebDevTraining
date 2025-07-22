@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제품 카드 grid 레이아웃</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .page-title{
+            text-align: center;
+            color: black;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        .product-grid{
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 반응형 균등하게 정렬*/
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product-card{
+            background: rgb(241, 241, 241);
+            border-radius: 10px;
+            box-sizing: border-box;
+            overflow: hidden; /*넘치는 글은 숨기기*/
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover{
+            transform: translateY(-0.5px);
+            box-shadow: 0 5px 2px rgba(204, 204, 204, 0.514);
+        }
+
+        .product-image{
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        .product-info{
+            padding: 20px;
+        }
+        .product-name{
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: rgba(0, 0, 0, 0.692);
+            margin-bottom: 10px;
+        }
+
+        .product-description{
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .product-price{
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e74d3cb2;
+            margin-bottom: 15px;
+        }
+
+        .buy-button{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover{
+            background-color: #667eea79;
+        }
+
+
+        /*반응형 테블릿*/
+        @media screen and (min-width: 768px){
+            .product-grid{
+                grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .page-title{
+                font-size: 1.5rem;
+            }
+        }
+
+
+        /*반응형 모바일*/
+        @media screen and (max-width: 480px){
+            .product-grid{
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .page-title{
+                font-size: 1.5rem;
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <h1 class="page-title">
+        쇼핑몰- 제품
+    </h1>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-image">
+                📱스마트폰 os
+            </div>
+
+            <div class="product-info">
+                <h3 class="product-name">
+                    Iphone 16 pro
+                </h3>
+                <p class="product-description">
+                    Phone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. iPhone 16 Pro comes in four stunning finishes — including new Desert Titanium.
+                </p>
+                <div class="product-price">
+                    1,550,000원
+                </div>
+                <button class="buy-button">
+                    장바구니 담기
+                </button>
+            </div>
+        </div>
+
+
+        <div class="product-card">
+            <div class="product-image">
+                📱스마트폰 os
+            </div>
+
+            <div class="product-info">
+                <h3 class="product-name">
+                    Iphone 16 pro
+                </h3>
+                <p class="product-description">
+                    Phone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. iPhone 16 Pro comes in four stunning finishes — including new Desert Titanium.
+                </p>
+                <div class="product-price">
+                    1,550,000원
+                </div>
+                <button class="buy-button">
+                    장바구니 담기
+                </button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                📱스마트폰 os
+            </div>
+
+            <div class="product-info">
+                <h3 class="product-name">
+                    Iphone 16 pro
+                </h3>
+                <p class="product-description">
+                    Phone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. iPhone 16 Pro comes in four stunning finishes — including new Desert Titanium.
+                </p>
+                <div class="product-price">
+                    1,550,000원
+                </div>
+                <button class="buy-button">
+                    장바구니 담기
+                </button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                📱스마트폰 os
+            </div>
+
+            <div class="product-info">
+                <h3 class="product-name">
+                    Iphone 16 pro
+                </h3>
+                <p class="product-description">
+                    Phone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. iPhone 16 Pro comes in four stunning finishes — including new Desert Titanium.
+                </p>
+                <div class="product-price">
+                    1,550,000원
+                </div>
+                <button class="buy-button">
+                    장바구니 담기
+                </button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                📱스마트폰 os
+            </div>
+
+            <div class="product-info">
+                <h3 class="product-name">
+                    Iphone 16 pro
+                </h3>
+                <p class="product-description">
+                    Phone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. iPhone 16 Pro comes in four stunning finishes — including new Desert Titanium.
+                </p>
+                <div class="product-price">
+                    1,550,000원
+                </div>
+                <button class="buy-button">
+                    장바구니 담기
+                </button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-image">
+                📱스마트폰 os
+            </div>
+
+            <div class="product-info">
+                <h3 class="product-name">
+                    Iphone 16 pro
+                </h3>
+                <p class="product-description">
+                    Phone 16 Pro features a Grade 5 titanium design with a new, refined microblasted texture. Titanium has one of the highest strength-to-weight ratios of any metal, making these models incredibly strong and impressively light. iPhone 16 Pro comes in four stunning finishes — including new Desert Titanium.
+                </p>
+                <div class="product-price">
+                    1,550,000원
+                </div>
+                <button class="buy-button">
+                    장바구니 담기
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="">
+    <!--no css-->
+    <style>
+        a:link, a:visited{
+            color: black;
+            text-decoration: none;
+        }
+
+        ul{
+            list-style: none;
+            width: 500px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        li{
+            display: inline-block;
+            width: 120px;
+            border: 1px solid black;
+            padding: 10px 15px;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        #result{
+            border: 1px solid black;
+            width: 80vw;
+            height: 80vh;
+            margin: 10px auto;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <ul>
+        <li><a href="#" onclick="changeBG('green')">ads</a></li>
+        <li><a href="#" onclick="changeBG('orange')">ads</a></li>
+        <li><a href="#" onclick="changeBG('purple')">asd</a></li>
+                        
+    </ul>
+    <div id="result"></div>
+
+    <script>
+        function changeBG(color){
+            let result =document.querySelector("#result");
+
+            result.style.background = color;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body, html{
+
+        }
+
+
+        .header{
+            width: auto;
+            background: linear-gradient(45deg, rgb(49, 0, 128), rgb(89, 0, 255), rgb(55, 0, 255), rgb(98, 0, 255));
+            text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 1px 1px rgb(163, 165, 248);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .header p{
+            background-color: white;
+            color: rgba(92, 90, 90, 0.993);
+        }
+
+
+        .card-container{
+            display: flex;
+            flex-flow: row wrap;
+            margin: 20px auto;
+            padding: 0 300px;
+        }
+
+        .card{
+            flex: 1 1 280px;
+            /*공간이 확대하면 커지고 축소하면 작아지는*/
+            max-width: 320px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px grey;
+            margin: 35px 5px;
+
+            overflow: hidden;
+            /*카드내용이 둥근 모서리를 넘지 않게 */
+
+            transition: transform 0.2s ease;
+            /*호버 이미지를 위한*/
+        }
+
+        .card:hover{
+            transform: translateY(-5px);
+        }
+
+        .card-image{
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card-title{
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description{
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .card-footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-price{
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e7434b;
+        }
+
+        .card-button{
+            padding: 0.7rem 1.5rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-button:hover{
+            background-color: #2980b9;
+        }
+
+
+        .card-content{
+            padding: 20px;
+        }
+
+        @media screen and (max-width: 768px){
+            .card-container{
+                padding: 0;
+                gap: 1rem;
+                /*칸드간격을 줄여서 공간절약*/
+            }
+            .card{
+                flex: 1 1 100%;
+                max-width: none;
+            }
+        }
+
+
+
+        .card:nth-child(1) .card-image{
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+        }
+        .card:nth-child(2) .card-image{
+            background: linear-gradient(45deg, #6b81ff, #a6ff00);
+        }
+        .card:nth-child(3) .card-image{
+            background: linear-gradient(45deg, #ff6b6b, #00ff62);
+        }
+        .card:nth-child(4) .card-image{
+            background: linear-gradient(45deg, #ff6beb54, #f700ff);
+        }
+        .card:nth-child(5) .card-image{
+            background: linear-gradient(45deg, #ff6b6b, #c8ff00);
+        }
+        .card:nth-child(6) .card-image{
+            background: linear-gradient(45deg, #b48383, #97702b);
+        }
+        .card:nth-child(7) .card-image{
+            background: linear-gradient(45deg, #9b0303, #796642);
+        }
+        .card:nth-child(8) .card-image{
+            background: linear-gradient(45deg, #613b3b, #312919);
+        }
+        
+
+
+
+    </style>
+
+
+</head>
+<body>
+    <div class="header">
+        <h1 class="phase-title">
+            카드 레이아웃
+        </h1>
+        <p>
+            flex에서 인지한 flex-wrap을 활용한 기본 그리드
+        </p>        
+    </div>
+
+
+
+    <div class="card-container">
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+                
+            
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+            
+            
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <div class="card-image">스마트폰</div>
+            <div class="card-content">
+                <h3 class="card-title">
+                        Samsung
+                </h3>
+
+                <p class="card-description">
+                    최신 AI 기술이 집약된 블라블라
+                </p>
+                    
+                <div class="card-footer">
+                    <span class="card-price">1,000,000원</span>
+                    <button class="card-button">구매</button>
+                </div>
+            </div>
+        </div>
+            
+
+
+    </div>
+</body>
+</html>

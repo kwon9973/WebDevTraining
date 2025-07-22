@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .container{
+            display: flex;
+            width: 800px;
+            border: 2px solid black;
+        }
+
+        .box{
+            color: white;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            background-color: black;
+            flex-shrink: 1;
+        }
+        /*줄어드는 비율 shrink 1배 2배 3배 줄어듣 비율*/
+
+        .box1{
+            text-align: center;
+            height: 100px;
+            line-height: 100px; 
+            flex-shrink: 2;
+            background-color: antiquewhite;
+        }
+        /*줄어드는 비율 shrink*/
+
+        .box2{
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            flex-basis: 100px;
+                       background-color:blueviolet;
+        }
+        .box3{
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            flex-basis: 200px;
+                       background-color: rgb(119, 91, 54);
+        }
+        </style>
+</head>
+<body>
+     <div class="container">
+        <div class="box">
+            grow: 1
+        </div>
+        <div class="box1">
+            grow: 2
+        </div>
+        <div class="box2">
+            basis: 100px
+        </div>
+        <div class="box3">
+            basis: 200px
+        </div>
+    </div>
+</body>
+</html>

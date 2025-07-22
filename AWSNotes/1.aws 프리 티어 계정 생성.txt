@@ -1,0 +1,11 @@
+1. aws 서비스 사용
+    1)먼저 계정생성
+    2)계정 생성 시점으로 12개월동안 무료서비스를 제공함
+        -프리티어(free tier)
+    3)AWS에 가입한지 12개월이 넘었다면 새로 계정 만들면 됨
+
+2. AWS 계정만들기
+    1)결재 가능한 카드가 필요하다
+    2)사이트 접속
+        -https://signin.aws.amazon.com/signup?request_type=register
+    

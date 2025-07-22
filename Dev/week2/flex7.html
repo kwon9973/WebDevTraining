@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .container{
+            background-color: aquamarine;
+            width: 300px;
+            height: 300px;
+            float: left;
+            display: flex;
+            flex-flow: row wrap;
+            
+        }
+        .container div{
+            width: 100px;
+            height: 100px;
+            margin: 10px 10px;
+            background-color: bisque;
+        }
+
+
+        #opt1{
+            justify-content: space-around;
+        }
+        #opt2{
+            align-content: flex-end;
+        }
+        #opt3{
+            align-content: space-between;
+        }
+        #opt4{
+            justify-content: space-evenly;
+        }
+
+        .container:nth-child(3){
+            align-self:baseline;
+        }
+
+    </style>
+
+
+<body>
+    <div class="container" id="opt1">
+        <div>
+            1
+        </div>
+        <div>
+            2   
+        </div>
+        <div>
+            3
+        </div>
+        <div>
+            4
+        </div>
+    </div>
+
+    <div class="container" id="opt2">
+        <div>
+            1
+        </div>
+        <div>
+            2   
+        </div>
+        <div>
+            3
+        </div>
+        <div>
+            4
+        </div>
+    </div>
+
+    <div class="container" id="opt3">
+        <div>
+            1
+        </div>
+        <div>
+            2   
+        </div>
+        <div>
+            3
+        </div>
+        <div>
+            4
+        </div>
+    </div>
+
+    <div class="container" id="opt4">
+        <div>
+            1
+        </div>
+        <div>
+            2   
+        </div>
+        <div>
+            3
+        </div>
+        <div>
+            4
+        </div>
+    </div>
+</body>
+</html>

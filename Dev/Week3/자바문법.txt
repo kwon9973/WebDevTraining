@@ -1,0 +1,54 @@
+변수
+    1) 자료를 담아두는 곳
+    2)필요한 자료를 저장하면 프로그램 실행중 사용가능
+    3)필요한 이유
+        -재사용성
+        -가독성
+            코드를 윍기 쉬움
+4)기본형 
+    -let 변수명
+        -변수를 선언한다
+
+2.상수(constant)
+    1) const 
+    2) 한번 값을 프로그램안에서 declare하면 프로그램안에서는 못바꿈
+
+3. number = integer, float, long, etc
+
+4. 이스케이프 문자  
+    -롸면에는 표시 X
+    -백슬래시로 해야함
+    -|'
+    -|b
+    -|n
+    -|t
+    -|d
+    -|x
+
+5. 템플릿 리터럴(template literal)로 문자열연결하기
+    -백틱으로 문자열 문자영릏 만듦
+    -
+
+6. 자료형 변환 스타일
+    1)느슨한 자료형 체크 (runtime 떄 자료를 체크 - 역사가 짧음)
+        - not specific check type like c++ or java.
+
+7. prompt로 치면 무조건 string 타입으로 전환된다.
+    - multiply (*) and substraction(-) apply하면 숫자로 전환된다?? 문제가 많다
+    -(+)는 string concatenation된다 다행히
+8. 자료형 변환함수
+    -parseInt()
+        - 문자열이나 논리형값을 숫자로 변형
+    -parseFloat()
+        -문자열을 실수(float)으로 변형
+    -Number()
+        -문자열이나 논리형을 값을 숫자로 변형
+    -String() 
+        -숫자나 논리형 값을 문자열로 변환함
+    -Boolean()
+        -괄호안의 값을 논리형으로 변환
+
+9. truthy와 falsy
+    1)자바스크립트에서는 모든 값을 true와 false로 나타낼수있다.
+        -false : 당연히 논리형 값 false는 falsy
+            -0, -0, "", '', null, undefined, NaN 다 false로 치부한다. 나머지 true

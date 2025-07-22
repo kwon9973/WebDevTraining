@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+         .container{
+            background-color: rgb(54, 172, 142);
+            border: 2px solid #000000;
+            display: flex;
+            
+            /*width:fit-content;*/
+
+            width:1500px;
+        }
+
+        .box{
+            padding: 5px 54px;
+            margin: 5px;
+            width: 80px;
+            text-align: center;
+        }
+
+        #opt1{
+            justify-content: flex-end;
+            align-content: center;
+            flex-flow: row wrap;
+        }
+        #opt2{
+            justify-content:space-evenly;
+            align-content: left;
+            flex-flow: row wrap;
+        }
+        #opt3{
+            justify-content: space-between;
+            align-content: center;
+            flex-flow: row wrap;
+        }
+        #opt4{
+            justify-content:space-around;
+            align-content: center;
+            flex-flow:row nowrap;
+        }
+        .border{
+            border: 2px solid black;
+        }
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+    <div class="container" id="opt1">
+        <div class="border box">
+            aa
+        </div>
+        <div class="border box">
+            bb
+        </div>
+        <div class="border box">
+            cc
+        </div>
+        <div class="border box">
+            dd
+        </div>
+        <div class="border box">
+            ee
+        </div>
+        <div class="border box">
+            ff
+        </div>
+    </div>
+
+
+    <div class="container" id="opt2">
+        <div class="border box">
+            aa
+        </div>
+        <div class="border box">
+            bb
+        </div>
+        <div class="border box">
+            cc
+        </div>
+        <div class="border box">
+            dd
+        </div>
+        <div class="border box">
+            ee
+        </div>
+        <div class="border box">
+            ff
+        </div>
+    </div>
+
+
+    <div class="container" id="opt3">
+        <div class="border box">
+            aa
+        </div>
+        <div class="border box">
+            bb
+        </div>
+        <div class="border box">
+            cc
+        </div>
+        <div class="border box">
+            dd
+        </div>
+        <div class="border box">
+            ee
+        </div>
+        <div class="border box">
+            ff
+        </div>
+    </div>
+
+
+    <div class="container" id="opt4">
+        <div class="border box">
+            aa
+        </div>
+        <div class="border box">
+            bb
+        </div>
+        <div class="border box">
+            cc
+        </div>
+        <div class="border box">
+            dd
+        </div>
+        <div class="border box">
+            ee
+        </div>
+        <div class="border box">
+            ff
+        </div>
+    </div>
+
+</body>
+</html>
