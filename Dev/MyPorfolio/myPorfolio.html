@@ -10,25 +10,10 @@
             background-color: white;
             scroll-behavior: smooth;
             overflow-y: scroll;
-
         }
         :root {
             --main-bg-color: brown;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- 헤더 와 사이드 메뉴판 처리-->
         .header{
             width: 100%;
             height: 100px;
@@ -91,16 +76,19 @@
             position: fixed;
             font-size: larger;
         }
+
         li{
             margin: 10px 0 10px 0;
             transition: background-image 0.2s ease, margin-left 0.3s ease-in-out;
         }
+
         .bar button{
             font-size: large;
             color: rgb(255, 255, 255);
             background-color: transparent;
             border: none;
         }
+
         ul :hover{
             cursor: pointer;
             margin-left: 10px;
@@ -110,6 +98,9 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        li:active{
+
+        }  
         .container{
             display: flex;
             flex-direction: column;
@@ -138,6 +129,7 @@
             height: 80%;
             border-radius: 10px;
         }
+        
          .item-experience{
             background-image: linear-gradient(to top right, #3c3c3c, #444444);
             color: rgb(0, 0, 0);
@@ -282,11 +274,12 @@
 
     <div class="container">
         
-
         <div class="item-introduction" id="1" style="position: relative;">
+            
             <div>
                 <img class="pic"  src="/MyPorfolio/DSC_0037.JPG"> 
             </div>
+            
             <div style=" grid-area: 1 / 2 / 3/ 2;">
                 <p style="width: 90%;
                 height: 100%;
@@ -298,6 +291,7 @@
                     맡은 일을 최선을 다해 임합니다.
                 </p>
             </div>
+
             <div>
                 <a1>
                     <li>현재나이: <a id="currentAge"></a> (1998년생)</li>
@@ -309,10 +303,10 @@
                     <li>한줄요약: 착함</li>
                 </a1>
             </div>
+            
         </div>
     
-
-        <div class="item-experience" id="2">
+        <div class="item-experience 2" id="2">
             <h1>중앙정보처리학원</h1>
             <p>프로젝트 기반 자바(JAVA) 응용 SW개발자 수료진행중<br>-css, html, JS<br>-Java<br>-SQL<br>-Java Spring
             <br>-DB</p>
@@ -320,8 +314,7 @@
             <p>-GPA: 3.31<br>-30초안에 맥주 2000cc 기록<br></p>
         </div>
 
-
-        <div class="item-project" id="3">
+        <div class="item-project 3" id="3">
             <div>
                 <h1>Project: 포커</h1><p>자바의 OOP와 자료구조 스타일을 이용해서 게임의 로직을 구현해봤습니다.</p>
             </div>
@@ -331,7 +324,6 @@
             </div>
             <img src="/MyPorfolio/poker2.PNG" style="width: 600px;">
         </div>
-
 
         <div class="item-project" id="4">
             <div>
@@ -353,10 +345,15 @@
     <script>
        
         let count = 0;
-        let currentYear = new Date().getFullYear();
-        document.getElementById('currentAge').textContent = currentYear - 1998;
 
-        
+
+        function scrollMan(divID){
+            const targetQuery = document.getElementById(divID);
+            if(targetQuery){
+                targetQuery.scrollIntoView({ behavior: 'smooth', block: 'start'});
+            }
+        }
+
         function clickMenu(){
             if(count % 2 != 0){
                 document.getElementById('menu').style.display = 'none';
@@ -370,6 +367,11 @@
             count++;
             console.log(count);
         }
+
+        let currentYear = new Date().getFullYear();
+        document.getElementById('currentAge').textContent = currentYear - 1998;
+
+
         function changeViewBack(){
             let posY = scrollY;
             let id = 0;
@@ -385,8 +387,10 @@
             }
 
             id -= 1;
+
             scrollMan(id);
         }
+
         function changeViewForward(){
             let posY = scrollY;
             let id = 0;
@@ -403,17 +407,17 @@
             }
 
             id += 1;
+
             scrollMan(id);
         }
-        function scrollMan(divID){
-            const targetQuery = document.getElementById(divID);
-            if(targetQuery){
-                targetQuery.scrollIntoView({ behavior: 'smooth', block: 'start'});
-            }
-        }
+
+
+
+        
+
+
     </script>
 
-
-
+    
 </body>
 </html>
