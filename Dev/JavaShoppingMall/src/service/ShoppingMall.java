@@ -13,12 +13,14 @@ import model.CartItem;
 
 public class ShoppingMall {
 	private HashMap<String, Product> products = new HashMap<String, Product>();      // 상품 관리
-    private HashMap<String, Customer> customers =new HashMap<String, Customer>();    // 고객 관리  
+    private HashMap<String, Customer> customers =new HashMap<String, Customer>();    // 고객 관리
     private HashMap<String, Manager> managers = new HashMap<String, Manager>();      // 관리자 관리
-    private ArrayList<Order> orders = new ArrayList<Order>();               // 주문 내역
+    private ArrayList<Order> orders = new ArrayList<Order>();               		// 주문 내역
     private HashMap<String, ArrayList<CartItem>> carts = new HashMap<String, ArrayList<CartItem>>(); // 고객별 장바구니
     private String mallName;
     private int orderCounter; // 주문 번호 생성용
+    //additional fields
+    private ArrayList<CartItem> savedCart = new ArrayList<CartItem>(); // carts add용 - 같은 고객아이디로 여러 카트 저장하려면 필요.
     
     public void addProduct(String productId, String name, int price, int stock, String category) throws ShopException{
     	if(products.containsKey(productId)) {
@@ -100,8 +102,6 @@ public class ShoppingMall {
     	}
     }
     void addToCart(String customerId, String productId, int quantity) throws CustomerNotFoundException, ProductNotFoundException{
-    	ArrayList <CartItem> arr = new ArrayList<CartItem>();
-    	
     	if(!products.containsKey(productId)) {
     		throw new ProductNotFoundException("존재하지 않는 상품입니다: P999");
     	}
@@ -109,8 +109,9 @@ public class ShoppingMall {
     		throw new CustomerNotFoundException("존재하지 않는 고객입니다: C999");
     	}
     	
-    	arr.add(new CartItem(products.get(productId),quantity));
-    	carts.put(customerId, arr);
+    	savedCart.add(new CartItem(products.get(productId),quantity)); // suspicious error - same product should be altogether even from the separate orders*********************************************************
+    	
+    	carts.put(customerId, savedCart); //not adding items for the same ID *********************************************************************
     }
     void displayCart(String customerId) throws CustomerNotFoundException{
     	if(!carts.containsKey(customerId)) {
@@ -122,4 +123,40 @@ public class ShoppingMall {
     		i++;
     	}
     }
+	 // 핵심 처리 로직:
+	 // 1. 고객 존재 확인 → CustomerNotFoundException
+	 // 2. 장바구니 비어있는지 확인 → ShopException  
+	 // 3. 재고 확인 및 차감 → InsufficientStockException
+	 // 4. 주문 생성 및 저장
+	 // 5. 장바구니 비우기
+    void placeOrder(String customerId) throws ShopException{
+    	if(!customers.containsKey(customerId)) {
+    		throw new ShopException("존재하지 않는 고객입니다: C999");
+    	}
+    	if(carts.isEmpty()) {
+    		throw new ShopException("장바구니가 비어있습니다.");
+    	}
+    	// 3. 재고 확인 및 차감 → InsufficientStockException
+    	//todo 
+    	Order order = new Order(customerId, customer, savedCart, orderedDate)
+    	
+    	for(ArrayList<CartItem> item: carts.values()) {
+    		 
+    	}
+    	
+    	
+    	
+    	
+    	
+    	
+    }
+	 // 출력 내용:
+	 // - 총 상품 수, 구매 가능한 상품 수, 재고 부족 상품 수 (5개 이하)
+	 // - 등록 고객 수, 총 주문 수, 총 매출
+	 // - 카테고리별 상품 수
+    void displayMallStatistics() {
+    	
+    }
+    
+    
 }
