@@ -1,0 +1,8 @@
+package exception;
+
+public class ShopException extends Exception{
+	
+	public ShopException(String msg) {
+		super(msg);
+	}
+}
