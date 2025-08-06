@@ -42,10 +42,11 @@ public class Product {
 	}
 	// 생성자, getter 메서드들
     public void reduceStock(int quantity) throws InsufficientStockException{
-    	if(this.stock > 1) {
+    	if(this.stock <= 5) {
     		throw new InsufficientStockException("재고가 부족합니다");
     	}else {
     		this.stock -= quantity;
+    		System.out.println(this.stock); 
     	}
     }
     public void addStock(int quantity) {
@@ -54,9 +55,9 @@ public class Product {
     public boolean isInStock() {
 		return (this.stock > 0 ? true : false);
     }
+    // 재고 5개 이하 체크 (요구사항)
     public boolean isLowStock() {
 		return (this.stock <= 5 ? true : false);
-    	// 재고 5개 이하 체크 (요구사항)
     }
     public void addReview(double newRating) {
     	if (reviewCount == 0) {

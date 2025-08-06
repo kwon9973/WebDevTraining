@@ -11,12 +11,15 @@ public class ShoppingMallTest {
 		
 		try {
 			mall.addCustomer("123","kwon","kwon9973@gmail.com");
+			mall.addProduct("P008", "백팩", 45000, 7, "가방");
+			
+			mall.displayAllProducts();
 			
 		} catch (ShopException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("sys end");
+		
 		
 	}
 	
